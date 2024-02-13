@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red242\green242\blue242;
+\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c0\c0\c0\c84706;\cssrgb\c96078\c96078\c96078;
+\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww19280\viewh13200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+NOTE: the -> are not code but what you should be checking or looking at\
+ssh URDREXELID@picottelogin.urcf.drexel.edu\
+Mkdir tutorial\
+Cd tutorial\
+Wget 
+\f1\fs22 \cf2 \CocoaLigature0 https://drive5.com/downloads/usearch11.0.667_i86linux32.gz\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+gunzip -d usearch11.0.667_i86linux32.gz\
+chmod a+x usearch11.0.667_i86linux32\
+ls\
+\'97> listed? Good!\
+->	./usearch11.0.667_i86linux32 \
+wget https://drive5.com/downloads/misop_v10a.tar.gz\
+tar -zxvf misop_v10a.tar.gz\
+ls\
+\'97> Listed? Good!\
+->	misop\
+export usearch="/home/URDREXELID/tutorial/usearch11.0.667_i86linux32"\
+cd misop/scripts\
+ls\
+nano ./run.bash\
+\'97> remove the version 10 check code\
+nano ./run_mock.bash\
+\'97> remove the version 10 check code\
+\
+./run.bash\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+./run_mock.bash\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+\
+==============================================================\
+To create the sintax bash file in the scripts folder\
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \expnd0\expndtw0\kerning0
+\up2 \CocoaLigature1 \outl0\strokewidth0 \strokec5 #!/bin/bash\cb1 \up0 \strokec3 \
+\cb4 \up2 \strokec5 mkdir\'a0\'96p ../sintax\cb1 \up0 \strokec3 \
+\cb4 \up2 \strokec5 mkdir\'a0-p ../exout\cb1 \up0 \strokec3 \
+\cb4 \up2 \strokec5 $usearch\'a0-sintax\'a0../fq/*_R1_*.fastq\'a0-db\'a016s.udb -tabbedout\'a0./sintax/rdp_16s_v16.fa\cb1 \up0 \strokec3 \
+\cb4 \up2 \strokec5 $usearch\'a0-sintax\'a0../out/otus.fa\'a0-db\'a0../sintax/rdp_16s_v16.fa\'a0-strand plus -tabbedout\'a0../exout/otus_sintax.txt\cb1 \up0 \strokec3 \
+}
